@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.paytimereminder.HomeActivity">
+    tools:context="com.paytimereminder.Activity.HomeActivity">
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addNew"
         android:layout_height="wrap_content"

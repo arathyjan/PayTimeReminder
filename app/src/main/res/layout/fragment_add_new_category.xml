@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.paytimereminder.Fragment.AddNewCategoryFragment">
+    <TextView
+        android:id="@+id/ChooseCategoryType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Category of your choice"/>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ChooseCategoryType">
+    </ListView>
+    <TextView
+        android:id="@+id/NewCategoryLabel"
+        android:text="Create New Category Of Your Choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list"/>
+    <TextView
+        android:id="@+id/Selectedcategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/NewCategoryLabel"/>
+    <EditText
+        android:id="@+id/NewCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Selectedcategory" />
+    <Button
+        android:id="@+id/NewCategoryAddButton"
+        android:text="Add New Category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/NewCategory"/>
+</RelativeLayout>

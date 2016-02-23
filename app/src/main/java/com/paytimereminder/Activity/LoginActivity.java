@@ -2,13 +2,9 @@ package com.paytimereminder.Activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.paytimereminder.R;
@@ -22,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loginService = new LoginService();
+        loginService = new LoginService(this);
         setContentView(R.layout.activity_login);
         context = this;
 //        usernameEditText.addTextChangedListener(textWatch);

@@ -1,10 +1,21 @@
 package com.paytimereminder.Model;
 
-public class User{
+import android.support.annotation.NonNull;
 
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class User extends RealmObject{
+
+    @PrimaryKey
     private Long userId;
+    @NonNull
     private String username;
+    @NonNull
     private String password;
+
+    public User() {
+    }
 
     public User(Long userId, String username, String password) {
         this.userId = userId;

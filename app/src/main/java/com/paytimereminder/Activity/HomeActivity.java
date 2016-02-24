@@ -2,7 +2,8 @@ package com.paytimereminder.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.paytimereminder.Fragment.CategoryListFragment;
+
+import com.paytimereminder.Fragment.PayTimeListFragment;
 import com.paytimereminder.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -14,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.MainContainer, CategoryListFragment.newInstance())
+                .replace(R.id.MainContainer, PayTimeListFragment.newInstance())
                 .commit();
     }
 }

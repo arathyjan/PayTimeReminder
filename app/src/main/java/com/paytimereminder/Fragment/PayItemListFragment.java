@@ -16,15 +16,15 @@ import com.paytimereminder.Service.PayItemService;
 
 import java.util.List;
 
-public class PayTimeListFragment extends Fragment {
+public class PayItemListFragment extends Fragment {
 
     private List<PayItem> payItems;
 
-    public static PayTimeListFragment newInstance() {
-        return new PayTimeListFragment();
+    public static PayItemListFragment newInstance() {
+        return new PayItemListFragment();
     }
 
-    public PayTimeListFragment() {
+    public PayItemListFragment() {
     }
 
     @Override
@@ -35,7 +35,7 @@ public class PayTimeListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_pay_time_lists, container, false);
+        return inflater.inflate(R.layout.fragment_pay_item_list, container, false);
     }
 
     @Override

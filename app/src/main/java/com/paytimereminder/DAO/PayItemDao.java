@@ -25,14 +25,21 @@ public class PayItemDao {
 
     public void create(PayItem payItem) {
         realm.beginTransaction();
-        PayItem item = realm.createObject(PayItem.class);
-        item.setName(payItem.getName());
-        item.setId(getNextKey());
+        realm.copyToRealm(payItem);
+//        PayItem item = realm.createObject(PayItem.class);
+//        item.setPayItemDetails(payItem.getPayItemDetails());
+//        item.setFrequency(payItem.getFrequency());
+//        item.setAmount(payItem.getAmount());
+//        item.setId(getNextKey());
         realm.commitTransaction();
     }
 
     public int getNextKey()
     {
         return realm.where(PayItem.class).max("id").intValue() + 1;
+    }
+
+    public PayItem find(int payItemId) {
+        return realm.where(PayItem.class).equalTo("id", payItemId).findFirst();
     }
 }

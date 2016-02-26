@@ -1,29 +1,33 @@
 package com.paytimereminder.Model;
 
-import android.support.annotation.NonNull;
-
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class PayItem extends RealmObject {
 
     @PrimaryKey
-
     private int id;
 
-    @NonNull
-    private String name;
+    private PayItemDetails payItemDetails;
+
+    private Frequency frequency;
+
+    private Amount amount;
 
     public PayItem() {
     }
 
-    public PayItem(int id, @NonNull String name) {
-        this.id = id;
-        this.name = name;
+    public PayItem(PayItemDetails payItemDetails, Frequency frequency, Amount amount) {
+        this.payItemDetails = payItemDetails;
+        this.frequency = frequency;
+        this.amount = amount;
     }
 
-    public PayItem(@NonNull String name) {
-        this.name = name;
+    public PayItem(int id, PayItemDetails payItemDetails, Frequency frequency, Amount amount) {
+        this.id = id;
+        this.payItemDetails = payItemDetails;
+        this.frequency = frequency;
+        this.amount = amount;
     }
 
     public int getId() {
@@ -34,12 +38,27 @@ public class PayItem extends RealmObject {
         this.id = id;
     }
 
-    @NonNull
-    public String getName() {
-        return name;
+    public PayItemDetails getPayItemDetails() {
+        return payItemDetails;
     }
 
-    public void setName(@NonNull String name) {
-        this.name = name;
+    public void setPayItemDetails(PayItemDetails payItemDetails) {
+        this.payItemDetails = payItemDetails;
+    }
+
+    public Frequency getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(Frequency frequency) {
+        this.frequency = frequency;
+    }
+
+    public Amount getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Amount amount) {
+        this.amount = amount;
     }
 }

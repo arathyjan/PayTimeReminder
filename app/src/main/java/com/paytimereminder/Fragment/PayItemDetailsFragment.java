@@ -11,16 +11,16 @@ import com.paytimereminder.Model.PayItem;
 import com.paytimereminder.R;
 import com.paytimereminder.Service.PayItemService;
 
-public class PayItemDetails extends Fragment {
+public class PayItemDetailsFragment extends Fragment {
 
     public static String ID = "id";
     private int payItemId;
 
-    public static PayItemDetails newInstance() {
-        return new PayItemDetails();
+    public static PayItemDetailsFragment newInstance() {
+        return new PayItemDetailsFragment();
     }
 
-    public PayItemDetails() {
+    public PayItemDetailsFragment() {
     }
 
     @Override
@@ -38,13 +38,13 @@ public class PayItemDetails extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        PayItem details = new PayItemService(getContext()).getDetails(payItemId);
+        PayItem item = new PayItemService(getContext()).getDetails(payItemId);
 
         TextView detailsIdTextView = (TextView) view.findViewById(R.id.detailsId);
-        detailsIdTextView.setText(String.valueOf(details.getId()));
+        detailsIdTextView.setText(String.valueOf(item.getId()));
 
         TextView detailsNameTextView = (TextView) view.findViewById(R.id.detailsName);
-        detailsNameTextView.setText(details.getName());
+        detailsNameTextView.setText(item.getPayItemDetails().getName());
     }
 
     @Override

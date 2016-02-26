@@ -61,7 +61,7 @@ public class PayItemListFragment extends Fragment {
     View.OnClickListener floatingButtonClickAction = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Fragment fragment = AddNewPayItem.newInstance();
+            Fragment fragment = AddNewPayItemFragment.newInstance();
             getActivity()
                     .getSupportFragmentManager()
                     .beginTransaction()
@@ -74,9 +74,9 @@ public class PayItemListFragment extends Fragment {
     AdapterView.OnItemClickListener categoryListClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Fragment fragment = PayItemDetails.newInstance();
+            Fragment fragment = PayItemDetailsFragment.newInstance();
             Bundle args = new Bundle();
-            args.putInt(PayItemDetails.ID, payItems.get(position).getId());
+            args.putInt(PayItemDetailsFragment.ID, payItems.get(position).getId());
             fragment.setArguments(args);
             getActivity()
                     .getSupportFragmentManager()

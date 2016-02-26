@@ -23,6 +23,6 @@ public class PayItemService {
     }
 
     public PayItem getDetails(int payItemId) {
-        return new PayItem(payItemId, "dummyname");
+        return dao.find(payItemId);
     }
 }

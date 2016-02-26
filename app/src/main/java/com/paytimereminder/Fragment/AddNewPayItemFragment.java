@@ -2,26 +2,28 @@ package com.paytimereminder.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.paytimereminder.Model.Amount;
+import com.paytimereminder.Model.Frequency;
 import com.paytimereminder.Model.PayItem;
+import com.paytimereminder.Model.PayItemDetails;
 import com.paytimereminder.R;
 import com.paytimereminder.Service.PayItemService;
 
-public class AddNewPayItem extends Fragment {
+public class AddNewPayItemFragment extends Fragment {
 
     EditText name;
 
-    public static AddNewPayItem newInstance() {
-        return new AddNewPayItem();
+    public static AddNewPayItemFragment newInstance() {
+        return new AddNewPayItemFragment();
     }
 
-    public AddNewPayItem() {
+    public AddNewPayItemFragment() {
     }
 
     @Override
@@ -49,7 +51,10 @@ public class AddNewPayItem extends Fragment {
         @Override
         public void onClick(View v) {
 
-            new PayItemService(getContext()).create(new PayItem(name.getText().toString()));
+            PayItemDetails payItemDetails = new PayItemDetails(name.getText().toString());
+            Frequency frequency = new Frequency();
+            Amount amount = new Amount();
+            new PayItemService(getContext()).create(new PayItem(payItemDetails, frequency, amount));
             getFragmentManager().popBackStack();
         }
     };
